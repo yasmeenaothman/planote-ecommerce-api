@@ -11,8 +11,9 @@ app.use(express.json());
 
 // Routes
 
-app.get("/", (req, res) => {
-  res.send("E-commerce API is running!");
+// Health Check Endpoint (for Render)
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
 });
 // all routes in authRoutes will start with "/auth"
 // tells Express: “any request starting with /path should go to this mini-router file .”
